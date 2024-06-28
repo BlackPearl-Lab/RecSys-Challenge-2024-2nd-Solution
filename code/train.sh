@@ -1,4 +1,4 @@
-python model1_train_catboost_pair_rank_loss_traindata.py
+# python model1_train_catboost_pair_rank_loss_traindata.py
 python model1_train_catboost_pair_rank_loss_alldata.py
-python model2_train_catboost_query_loss_traindata.py
+# python model2_train_catboost_query_loss_traindata.py
 python model2_train_catboost_query_loss_alldata.py
