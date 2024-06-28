@@ -1,0 +1,703 @@
+V1_6e00181c:
+    article_data: ./features/nn_data/article/article_feats.parquet
+    data_block_size: 100000
+    data_format: csv
+    data_root: ./dataset/nn_data
+    feature_cols:
+    - {active: true, dtype: int, name: impression_id, remap: false, type: meta}
+    - {active: true, dtype: str, name: user_id, type: categorical}
+    - {active: true, dtype: str, name: article_id, type: categorical}
+    - {active: true, dtype: str, name: category, type: categorical}
+    - {active: true, dtype: str, name: article_type, type: categorical}
+    - {active: true, dtype: str, max_len: 5, name: ner_clusters, padding: pre, splitter: ^,
+        type: sequence}
+    - {active: true, dtype: str, max_len: 5, name: topics, padding: pre, splitter: ^,
+        type: sequence}
+    - {active: true, dtype: str, name: premium, type: categorical}
+    - {active: true, dtype: str, name: subcat1, type: categorical}
+    - {active: true, dtype: str, name: sentiment_label, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: impr_article_impr_hour_article_cnt_rank, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: impression_day_hour_article_inview_num_mean, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: ctr, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: impr_hour_article_cnt, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: w2v_each_cosine, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: document_vector4, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: contrastive_vector3, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: user_article_impr_time_diff, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: impression_day_hour_article_inview_num_std, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: publish_48hour_article_inview_num_mean, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: cl_each_cosine, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: session_article_impr_time_diff, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: -1000000,
+        name: mod_read_time, num_buckets: 50, type: categorical}
+    - {active: true, dtype: str, name: device_type, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: num_publish_hour_42, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: total_read_time, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: article_pv_median, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: read_time_fixed_std, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: user_article_impr_time_rank, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: his_subcate_cnt, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: session_article_impr_time_rank_reverse, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: distance_published_hour_cos, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: document_vector3, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: num_publish_hour_36, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: impr_article_bpr_rank, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: session_article_impr_time_rank, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: read_time, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: impr_article_ctr_rank_reverse, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: impr_category_cnt, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: subcate_emb_sim_his_mean_item_euclidean_list, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: num_publish_hour_47, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: user_inreviws_mean_std, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: scroll_percentage, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: device_type_article_inview_num_std, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: num_publish_hour_17, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: num_publish_hour_28, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: num_publish_hour_45, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: user_inview_item_all_mean_sim_list, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: num_publish_hour_43, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: article_user_freq, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: w2v_inview_std, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: total_inviews_mean_impr, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: bpr, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: subcate_emb_sim_his_mean_item_sim_list, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: user_impression_freq, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: document_vector8, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: num_publish_hour_21, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: his_cate_cnt, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: article_id_day_count, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: impression_ctr_mean_impr_diff, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: impr_article_total_pageviews_rank_reverse, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: impression_hour_article_inview_num_mean, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: distance_publish_seconds_mean_impr, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: num_publish_hour_26, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: distance_published_hour_cos_mean_impr, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: cate_emb_sim_inreviws_mean_kurt, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: num_publish_hour_25, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: total_pageviews_mean_impr, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: document_vector9, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: session_id_articles_len_last, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: sentiment_score, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: num_publish_hour_44, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: body_inview_item_all_mean_sim_list, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: num_publish_hour_2, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: images_each_euclidean, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: user_impression_cnt, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: session_ctr_mean_diff, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: cumsum_publish_hour_12, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: topic_inreviws_mean_std, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: cumsum_publish_hour_9, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: num_publish_hour_24, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: title_inreviws_mean_kurt, num_buckets: 50, type: categorical}
+    - {active: true, dtype: str, name: is_sso_user, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: body_difficult_words, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: num_publish_hour_9, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: body_spelling_errors, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: ctr_mean_impr, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: read_time_last_fix, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: history_time_diff_std, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: cate_emb_sim_his_mean_item_sim_list, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: num_publish_hour_22, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: next_read_time_sort, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: num_publish_hour_35, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: num_publish_hour_19, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: body_his_mean_skew, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: cl_history_std, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: user_distance_publish_hours_skew, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: contrastive_vector10, num_buckets: 50, type: categorical}
+    - {active: true, dtype: str, name: is_subscriber, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: session_category_cnt, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: user_impression_freq_last_fix, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: article_imprs_user, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: history_time_diff_mean, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: imporession_hour_cos, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: cl_history_skew, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: impression_distance_publish_seconds_mean_impr_diff, num_buckets: 50,
+        type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: num_publish_hour_30, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: article_inviews_len_std, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: user_ctr_mean, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: title_inview_item_all_mean_sim_list, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: w2v_history_std, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: body_his_mean_std, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: num_publish_hour_11, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: category_freq_fix, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: body_text_standard, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: num_publish_hour_40, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: impr_hour_article_cnt_mean_impr, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: session_id_impression_time_next, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: history_scroll_percentage_skew, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: category_inview_num_std, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: impression_impr_hour_article_cnt_mean_impr_diff, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: user_inreviws_mean_kurt, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: subcate_emb_sim_his_mean_skew, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: images_history_std, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: user_w2v_each_cosine_skew, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: history_scroll_percentage_std, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: article_pv_min, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: num_publish_hour_20, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: session_id_read_time_last, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: category_inview_num_mean, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: cate_emb_sim_his_mean_item_euclidean_list, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: ctr_mean, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: num_publish_hour_39, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: num_publish_hour_29, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: topic_his_mean_kurt, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: cate_emb_sim_his_mean_skew, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: title_inreviws_mean_skew, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: article_pv_max, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: num_publish_hour_31, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: total_inviews_mean, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: body_dale_chall_readability_score_v2, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: user_w2v_each_cosine_mean, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: num_publish_hour_10, num_buckets: 50, type: categorical}
+    - {active: true, dtype: str, name: impression_hour, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: user_distance_publish_hours_mean, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: article_inview_num_std, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: history_read_time_mean, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: subcate_emb_sim_inview_item_all_mean_sim_list, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: article_freq_fix, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: next_exp_diff, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: cumsum_publish_hour_10, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: body_flesch_kincaid_grade, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: article_inviews_len_mean, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: topic_his_mean_skew, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: session_id_articles_len_next, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: article_hour_nunique, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: article_pv_std, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: read_time_fixed_sum, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: title_spelling_errors, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: body_ts_sentence_counts, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: cate_emb_sim_his_mean_kurt, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: cl_inview_kurt, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: cumsum_publish_hour_24, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: total_pageviews, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: total_inviews, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: topic_inreviws_mean_skew, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: article_pv_mean, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: bert_each_euclidean, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: article_inview_num_mean, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: body_dale_chall_readability_score, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: cumsum_publish_hour_3, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: topic_inview_item_all_mean_sim_list, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: article_pv_diff_sum, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: cumsum_publish_hour_6, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: distance_published_hour_cos_mean, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: num_publish_hour_33, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: device_type_article_inview_num_mean, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: imporession_hour_sin, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: cumsum_publish_hour_8, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: body_avg_char_per_word, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: num_publish_hour_3, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: num_publish_hour_13, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: user_ctr_std, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: body_difficult_words_ratio, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: user_distance_publish_hours_std, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: user_article_impr_time_rank_reverse, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: num_publish_hour_1, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: contrastive_vector9, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: user_total_inviews_mean, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: article_pv_diff_skew, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: impr_article_total_pageviews_rank, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: published_weekday_cos, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: num_publish_hour_34, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: num_publish_hour_32, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: bert_each_cosine, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: num_publish_hour_0, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: impression_hour_article_inview_num_std, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: contrastive_vector1, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: num_publish_hour_16, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: num_publish_hour_46, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: session_total_pageviews_mean_diff, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: num_publish_hour_23, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: images_each_cosine, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: bert_roberta_cosine_similarity, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: cate_emb_sim_inreviws_mean_std, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: history_article_id_nunique, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: num_publish_hour_38, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: impression_total_pageviews_mean_impr_diff, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: cl_each_euclidean, num_buckets: 50, type: categorical}
+    - {active: true, dtype: str, name: imp_day, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: w2v_each_euclidean, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: distance_publish_days, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: pulish_3day, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: impr_article_distance_published_hour_cos_rank, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: subcate_emb_sim_inreviws_mean_std, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: distance_publish_seconds, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: distance_published_hour_sin, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: distance_publish_minutes, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: publish_48hour, num_buckets: 50, type: categorical}
+    - {active: true, dtype: str, max_len: 200, name: hist_id, padding: pre, share_embedding: article_id,
+        splitter: ^, type: sequence}
+    - {active: true, dtype: str, max_len: 200, name: hist_cat, padding: pre, share_embedding: category,
+        splitter: ^, type: sequence}
+    - {active: true, dtype: str, max_len: 200, name: hist_subcat1, padding: pre, share_embedding: subcat1,
+        splitter: ^, type: sequence}
+    - {active: true, dtype: str, max_len: 200, name: hist_sentiment, padding: pre,
+        share_embedding: sentiment_label, splitter: ^, type: sequence}
+    - {active: true, dtype: str, max_len: 200, name: hist_type, padding: pre, share_embedding: article_type,
+        splitter: ^, type: sequence}
+    - {active: true, dtype: str, freeze_emb: true, min_categr_count: 1, name: article_id_img,
+        preprocess: copy_from(article_id), pretrain_dim: 64, pretrain_usage: init,
+        pretrained_emb: ./features/nn_data/article/image_emb_dim64.npz, type: categorical}
+    - {active: true, dtype: str, freeze_emb: true, min_categr_count: 1, name: article_id_text,
+        preprocess: copy_from(article_id), pretrain_dim: 64, pretrain_usage: init,
+        pretrained_emb: ./features/nn_data/article/contrast_emb_dim64.npz, type: categorical}
+    - {active: true, dtype: str, freeze_emb: true, max_len: 200, min_categr_count: 1,
+        name: hist_id_img, padding: pre, preprocess: copy_from(hist_id), pretrain_dim: 64,
+        pretrain_usage: init, pretrained_emb: ./features/nn_data/article/image_emb_dim64.npz,
+        share_embedding: article_id_img, splitter: ^, type: sequence}
+    - {active: true, dtype: str, freeze_emb: true, max_len: 200, min_categr_count: 1,
+        name: hist_id_text, padding: pre, preprocess: copy_from(hist_id), pretrain_dim: 64,
+        pretrain_usage: init, pretrained_emb: ./features/nn_data/article/contrast_emb_dim64.npz,
+        share_embedding: article_id_text, splitter: ^, type: sequence}
+    - {active: true, dtype: str, max_len: 200, name: hist_read_time_bin, padding: pre,
+        splitter: ^, type: sequence}
+    - {active: true, dtype: str, max_len: 200, name: hist_scroll_percent_bin, padding: pre,
+        splitter: ^, type: sequence}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: hist_clk_num, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: hist_total_readtime, num_buckets: 50, type: categorical}
+    - {active: true, dtype: float, name: session_impression_id_num, type: categorical}
+    - {active: true, dtype: float, name: impression_id_in_userdaily_rank, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: predict_next_read_time, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: session_duration_time, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: user_daily_impression_id_num, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: user_daily_total_read_time, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: user_daily_category_count, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: user_daily_subcat1_count, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: user_daily_articletype_count, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: user_daily_premium_count, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: user_daily_sentiment_count, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: user_hour_category_count, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: user_hour_daily_subcat1_count, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: user_hour_articletype_count, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: user_hour_premium_count, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: user_hour_sentiment_count, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: user_id_impression_id_article_impression_day_hour_article_inview_num_mean_rank_reverse,
+        num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: day_hour_article_scroll_percentage_mean, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: impression_day_hour_device_type_article_inview_num_std, num_buckets: 50,
+        type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: impr_article_impr_pub_hour_imprs_rank, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: user_id_impression_id_impression_day_hour_article_inview_num_mean_mean_diff,
+        num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: impression_day_hour_publish_48hour_article_inview_num_mean, num_buckets: 50,
+        type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: total_avg_time_mean_impr_diff, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: article_hour_cnt_with_ctr, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: user_id_impression_id_article_publish_48hour_article_inview_num_mean_rank_reverse,
+        num_buckets: 50, type: categorical}
+    - {active: true, dtype: str, name: subcate_str, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: impression_day_article_inview_num_mean, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: impression_day_article_inview_num_std, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: day_hour_article_read_time_mean, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: user_id_impression_id_impression_day_hour_article_inview_num_mean_mean,
+        num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: user_id_impression_id_w2v_each_cosine_mean_diff, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: impression_day_hour_article_inview_num_skew, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: article_impr_hour_inview_mean, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: publish_48hour_article_inview_num_skew, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: publish_48hour_device_type_article_inview_num_std, num_buckets: 50,
+        type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: impr_hour_article_cnt_mean_impr_diff, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: impr_article_impr_pub_interval_rank, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: impression_day_hour_device_type_article_inview_num_max, num_buckets: 50,
+        type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: impr_category_ratio, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: impression_day_hour_device_type_article_inview_num_median, num_buckets: 50,
+        type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: impression_day_hour_article_inview_num_median, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: impression_day_hour_device_type_article_inview_num_skew, num_buckets: 50,
+        type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: impression_day_hour_publish_48hour_article_inview_num_std, num_buckets: 50,
+        type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: publish_48hour_article_scroll_percentage_mean, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: day_hour_article_scroll_percentage_std, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: hist_category_length, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: publish_48hour_article_read_time_mean, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: user_id_impression_id_article_impression_day_hour_article_inview_num_mean_rank,
+        num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: article_read_time_mean, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: article_scroll_percentage_mean, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: impr_category_cnt_new, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: user_id_impression_id_article_total_read_time_rank_reverse, num_buckets: 50,
+        type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: user_id_impression_id_article_hour_cnt_with_ctr_mean_diff, num_buckets: 50,
+        type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: user_id_impression_id_article_article_hour_cnt_with_ctr_rank_reverse,
+        num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: publish_48hour_article_inview_num_min, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: publish_48hour_article_read_time_std, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: impression_day_hour_article_inview_num_max, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: category_hist_click_num, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: impression_day_hour_device_type_article_inview_num_min, num_buckets: 50,
+        type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: day_hour_article_read_time_std, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: impr_inview_cnt, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: article_read_time_std, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: user_id_impression_id_total_read_time_mean, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: impr_first_sub_category_cnt, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: user_id_impression_id_his_subcate_cnt_mean, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: article_scroll_percentage_std, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: impression_day_hour_article_inview_num_max_min, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: user_id_impression_id_total_read_time_mean_diff, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: user_id_impression_id_article_hour_cnt_with_ctr_mean, num_buckets: 50,
+        type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: publish_48hour_article_inview_num_max, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: impression_day_hour_article_inview_num_min, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: user_impr_category_ratio_std, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: user_id_impression_id_cl_each_cosine_mean, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: user_id_impression_id_article_publish_48hour_article_inview_num_mean_rank,
+        num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: user_id_impression_id_article_his_subcate_cnt_rank_reverse, num_buckets: 50,
+        type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: user_id_impression_id_w2v_each_cosine_mean, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: impr_article_total_inviews_rank, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: user_id_impression_id_article_total_read_time_rank, num_buckets: 50,
+        type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: user_id_impression_id_article_w2v_each_cosine_rank_reverse, num_buckets: 50,
+        type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: publish_48hour_article_scroll_percentage_std, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: user_id_impression_id_article_his_subcate_cnt_rank, num_buckets: 50,
+        type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: impr_article_impr_pub_interval_rank_reverse, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: user_id_impression_id_his_subcate_cnt_mean_diff, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: user_id_impression_id_article_cl_each_cosine_rank_reverse, num_buckets: 50,
+        type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: user_impr_category_num_std, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: impression_day_hour_device_type_article_inview_num_mean, num_buckets: 50,
+        type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: user_id_impression_id_article_cl_each_cosine_rank, num_buckets: 50,
+        type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: user_id_impression_id_article_w2v_each_cosine_rank, num_buckets: 50,
+        type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: user_id_impression_id_cl_each_cosine_mean_diff, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: user_id_impression_id_article_article_hour_cnt_with_ctr_rank, num_buckets: 50,
+        type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: category_hist_click_scroll_percentage_mean_ratio, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: total_inviews_mean_impr_diff, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: impr_article_impr_hour_article_cnt_rank_reverse, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: impr_pub_hour_imprs_mean_impr, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: user_id_impression_id_publish_48hour_article_inview_num_mean_mean, num_buckets: 50,
+        type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: category_hist_click_read_time_sum_ratio, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: impr_pub_hour_imprs_diff, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: category_hist_click_num_ratio, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: user_id_impression_id_publish_48hour_article_inview_num_mean_mean_diff,
+        num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: impr_pub_hour_imprs_mean_impr_diff, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: impr_pub_hour_imprs, num_buckets: 50, type: categorical}
+    - {active: true, category_processor: quantile_bucket, dtype: float, fill_na: 0,
+        name: impr_article_impr_pub_hour_imprs_rank_reverse, num_buckets: 50, type: categorical}
+    label_col: {dtype: float, name: click}
+    min_categr_count: 10
+    streaming: true
+    test_data: ./features/nn_data/imp/test_imp.parquet
+    test_history: ./features/nn_data/history/test_history.parquet
+    train_data: ./features/nn_data/imp/train_imp.parquet
+    train_history: ./features/nn_data/history/train_history.parquet
+    valid_data: ./features/nn_data/imp/valid_imp.parquet
+    valid_history: ./features/nn_data/history/valid_history.parquet
