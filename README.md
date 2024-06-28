@@ -37,7 +37,7 @@ Switch to the 'code' subdirectory and execute the following command:
 sh train.sh
 ```
 ### NN Model
-switch to the 'code/nn' subdirectory and execute the following command:
+switch to the 'code/nn' subdirectory and execute the following commands:
 ```sh
 sh gen_sample.sh
 sh run.sh
@@ -47,6 +47,7 @@ sh run.sh
 ```sh
 sh submit.sh
 ```
+
 If you have any questions, Welcome to contact us.
 
 
